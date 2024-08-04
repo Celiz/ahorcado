@@ -1,0 +1,32 @@
+.tableContainer {
+    width: 100%;
+    overflow-x: auto;
+  }
+  
+  .table {
+    width: 100%;
+    min-width: 300px;
+    border-collapse: collapse;
+  }
+  
+  .tableHeader {
+    background-color: #f8f9fa;
+  }
+  
+  .tableHeaderCell {
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+  }
+  
+  .tableCell {
+    padding: 12px;
+    border-top: 1px solid #dee2e6;
+  }
+  
+  @media (max-width: 600px) {
+    .tableHeaderCell,
+    .tableCell {
+      padding: 8px;
+    }
+  }

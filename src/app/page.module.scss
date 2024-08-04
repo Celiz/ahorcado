@@ -1,0 +1,34 @@
+.container {
+    min-height: 100vh;
+    padding: 1rem;
+  }
+  
+  .main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 auto;
+  }
+  
+  .gameSection,
+  .scoresSection {
+    width: 100%;
+  }
+  
+  @media (min-width: 768px) {
+    .main {
+      flex-direction: row;
+      align-items: flex-start;
+    }
+  
+    .gameSection {
+      flex: 1;
+      max-width: 60%;
+    }
+  
+    .scoresSection {
+      flex: 1;
+      max-width: 40%;
+    }
+  }
