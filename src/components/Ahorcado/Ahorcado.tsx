@@ -71,7 +71,7 @@ export const Ahorcado = () => {
 
     if (normalizedWord.includes(normalizeString(letter))) {
       if (!getWordDisplay(newGuessedLetters).includes('_')) {
-        const newScore = calculateScore(newGuessedLetters.size, attempts);
+        const newScore = calculateScore(attempts);
         setScore(newScore);
         setMessage('¡Felicidades! Has ganado.');
         setGameOver(true);
@@ -98,10 +98,16 @@ export const Ahorcado = () => {
       .join(' ');
   };
 
-  const calculateScore = (guessedCount: number, incorrectAttempts: number) => {
-    const baseScore = word.length * 10;
-    const penaltyPerIncorrect = 5;
-    return Math.max(0, baseScore - (incorrectAttempts * penaltyPerIncorrect));
+  const calculateScore = (incorrectAttempts: number) => {
+    const baseScore = 100;
+    const penaltyPerIncorrect = 10;
+    const finalScore = Math.max(0, baseScore - (incorrectAttempts * penaltyPerIncorrect));
+
+    if(incorrectAttempts == maxAttempts) {
+      return 0;
+    }
+    
+    return finalScore;
   };
 
   const handleSaveScore = async () => {

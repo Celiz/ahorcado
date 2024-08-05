@@ -76,6 +76,8 @@
   @media (max-width: 768px) {
     .gameContainer {
       padding: 2rem;
+      width: 100%;
+
     }
   
     .title {
@@ -83,7 +85,6 @@
     }
   
     .gameContent {
-      flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
     }
